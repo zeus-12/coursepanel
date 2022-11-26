@@ -10,15 +10,19 @@ interface HeroSectionTypes {
 const Hero: React.FC<HeroSectionTypes> = ({ route }) => {
   const router = useRouter();
 
-  const title =
-    route === "/faculty"
-      ? "Need help building curriculums?"
-      : "Want to plan better curricula?";
-  const description =
-    route === "/faculty" ? "We are here to help!" : "Presenting Courseplan!";
+  const isInstitutePage = route === "/institute";
+
+  const title = isInstitutePage
+    ? "Need help building curriculums?"
+    : "Want to plan better curricula?";
+
+  const description = isInstitutePage
+    ? "We are here to help!"
+    : "Presenting Courseplan!";
+
   const toggleCheck = (e: any) => {
     let checked = e.target.checked;
-    router.push(checked ? "/faculty" : "/");
+    router.push(checked ? "/institute" : "/");
   };
 
   return (
@@ -28,18 +32,20 @@ const Hero: React.FC<HeroSectionTypes> = ({ route }) => {
           <p className="text-sm">For students</p>
           <Switch
             className="flex items-center"
-            checked={route === "/faculty"}
+            checked={isInstitutePage}
             onChange={(e) => toggleCheck(e)}
-            size="xl"
+            size="md"
           />
-          <p className="text-sm">For faculty</p>
+          <p className="text-sm">For institute</p>
         </div>
 
-        <div className="lg:max-w-[30vw]">
-          <p className="text-7xl font-semibold tracking-tighter">{title}</p>
+        <div className="lg:max-w-[40vw]">
+          <p className="text-5xl font-semibold tracking-tighter lg:text-6xl">
+            {title}
+          </p>
           <p
             className={`mt-4 ${
-              route === "/faculty" ? "text-gray-200" : "text-gray-600"
+              isInstitutePage ? "text-gray-200" : "text-gray-600"
             }`}
           >
             {description}

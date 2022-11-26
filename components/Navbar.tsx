@@ -5,24 +5,26 @@ import { Burger } from "./NavbarComponents";
 
 const navItems = [
   {
-    name: "For Institutes",
-    path: "/faculty",
-  },
-  {
     name: "For Students",
     path: "/",
   },
+  {
+    name: "For Institutes",
+    path: "/institute",
+  },
+  // {
+  //   name: "Contact Us",
+  //   path: "/contact",
+  // },
 ];
 
 const Navbar = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <nav className="my-4 flex items-center justify-between px-8 text-2xl lg:px-32">
+    <nav className="my-3 flex items-center justify-between px-8 text-2xl lg:px-24 xl:px-32">
       <Link href="/" passHref>
-        <p className="text-xl font-semibold tracking-tight lg:text-2xl">
-          CoursePanel
-        </p>
+        <p className="text-xl font-semibold tracking-tight">CoursePanel</p>
       </Link>
 
       <div className="hidden gap-8 lg:flex">
@@ -49,11 +51,17 @@ const NavItemsComponent: React.FC = () => {
     <div className="flex flex-col items-center gap-8 lg:flex-row">
       {navItems.map((item) => (
         <Link href={item.path} key={item.name}>
-          <p className="rounded-md px-2 py-1 text-3xl font-semibold text-gray-700 hover:bg-gray-100 lg:text-xl">
+          <p className="rounded-md px-2 py-[0.33rem] text-2xl font-semibold text-gray-700 hover:bg-gray-100 lg:text-lg">
             {item.name}
           </p>
         </Link>
       ))}
+
+      <Link href="/contact">
+        <Button variant="outline" color={"dark"}>
+          Contact Us
+        </Button>
+      </Link>
     </div>
   );
 };

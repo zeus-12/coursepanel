@@ -5,6 +5,8 @@ export default function Home() {
   const router = useRouter();
   const { route } = router;
 
+  // const
+
   return (
     <div>
       <Hero route={route} />

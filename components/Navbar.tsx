@@ -5,16 +5,12 @@ import { Burger } from "./NavbarComponents";
 
 const navItems = [
   {
-    name: "Home",
+    name: "For Institutes",
+    path: "/faculty",
+  },
+  {
+    name: "For Students",
     path: "/",
-  },
-  {
-    name: "About",
-    path: "/about",
-  },
-  {
-    name: "Contact",
-    path: "/contact",
   },
 ];
 
@@ -22,15 +18,17 @@ const Navbar = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <nav className="mt-4 flex items-center justify-between px-4 text-2xl">
-      <p className="text-xl font-semibold tracking-tight">CoursePanel</p>
+    <nav className="my-4 flex items-center justify-between px-8 text-2xl lg:px-32">
+      <Link href="/" passHref>
+        <p className="text-xl font-semibold tracking-tight lg:text-2xl">
+          CoursePanel
+        </p>
+      </Link>
+
       <div className="hidden gap-8 lg:flex">
         <NavItemsComponent />
       </div>
 
-      <Button className="hidden lg:flex" variant="outline">
-        Get Started!
-      </Button>
       <Burger opened={opened} setOpened={setOpened} />
 
       <Drawer

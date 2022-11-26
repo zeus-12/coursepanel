@@ -6,7 +6,7 @@ export default function Faculty() {
   const { route } = router;
 
   return (
-    <div>
+    <div className="bg-black text-white">
       <Hero route={route} />
     </div>
   );

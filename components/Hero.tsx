@@ -10,13 +10,19 @@ interface HeroSectionTypes {
 const Hero: React.FC<HeroSectionTypes> = ({ route }) => {
   const router = useRouter();
 
+  const title =
+    route === "/faculty"
+      ? "Need help building curriculums?"
+      : "Want to plan better curricula?";
+  const description =
+    route === "/faculty" ? "We are here to help!" : "Presenting Courseplan!";
   const toggleCheck = (e: any) => {
     let checked = e.target.checked;
     router.push(checked ? "/faculty" : "/");
   };
 
   return (
-    <div className="lg:px-18 gap-4 px-4 pt-16 sm:px-16 md:px-32 lg:flex xl:px-32">
+    <div className="lg:px-18 items-center gap-4 px-4 py-16 sm:px-16 md:px-32 lg:flex xl:px-32">
       <div className="flex flex-1 flex-col">
         <div className="mb-4 flex items-center gap-2">
           <p className="text-sm">For students</p>
@@ -30,14 +36,13 @@ const Hero: React.FC<HeroSectionTypes> = ({ route }) => {
         </div>
 
         <div className="lg:max-w-[30vw]">
-          <p className="text-5xl font-semibold tracking-tighter">
-            Drag and drop your courses to create stuff
-          </p>
-          <p className="mt-4 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit error quos sunt earum ab iste sed, corrupti
-            doloremque, placeat perferendis repudiandae cum voluptate quidem
-            nulla dolor optio maiores blanditiis laboriosam?
+          <p className="text-7xl font-semibold tracking-tighter">{title}</p>
+          <p
+            className={`mt-4 ${
+              route === "/faculty" ? "text-gray-200" : "text-gray-600"
+            }`}
+          >
+            {description}
           </p>
 
           <Link href="/">
@@ -52,8 +57,8 @@ const Hero: React.FC<HeroSectionTypes> = ({ route }) => {
         <Image
           src="/logo.png"
           alt="logo"
-          width={50}
-          height={50}
+          width={100}
+          height={100}
           className="h-auto w-full lg:max-w-[30vw]"
         />
       </div>

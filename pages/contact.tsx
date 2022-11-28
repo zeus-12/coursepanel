@@ -11,7 +11,7 @@ const content = [
   {
     title: "Talk with us",
     content:
-      "Not convinced? Reach out to us and get all your queries solved at coursepanel@gmail.com",
+      "Not convinced? Reach out to us and get  all your queries solved at coursepanel@gmail.com",
   },
 ];
 

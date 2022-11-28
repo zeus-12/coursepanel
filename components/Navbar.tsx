@@ -2,20 +2,17 @@ import Link from "next/link";
 import { Button, Drawer } from "@mantine/core";
 import { useState } from "react";
 import { Burger } from "./NavbarComponents";
+import { useRouter } from "next/router";
 
 const navItems = [
   {
     name: "For Students",
-    path: "/",
+    path: "/map",
   },
   {
     name: "For Institutes",
-    path: "/institute",
+    path: "/plan",
   },
-  // {
-  //   name: "Contact Us",
-  //   path: "/contact",
-  // },
 ];
 
 const Navbar = () => {
@@ -47,11 +44,17 @@ const Navbar = () => {
 };
 
 const NavItemsComponent: React.FC = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col items-center gap-8 lg:flex-row">
       {navItems.map((item) => (
         <Link href={item.path} key={item.name}>
-          <p className="rounded-md px-2 py-[0.33rem] text-2xl font-semibold text-gray-700 hover:bg-gray-100 lg:text-lg">
+          <p
+            className={`rounded-md px-2 py-[0.33rem] text-2xl font-semibold text-gray-700 hover:bg-gray-100 lg:text-lg ${
+              router.route.startsWith(item.path) ? "text-cyan-500 " : ""
+            }`}
+          >
             {item.name}
           </p>
         </Link>

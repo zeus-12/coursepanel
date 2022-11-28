@@ -5,39 +5,42 @@ import { useRouter } from "next/router";
 
 interface HeroSectionTypes {
   route: string;
+  title: string;
+  description: string;
+  displaySwitch: boolean;
 }
 
-const Hero: React.FC<HeroSectionTypes> = ({ route }) => {
+const Hero: React.FC<HeroSectionTypes> = ({
+  route,
+  title,
+  description,
+  displaySwitch,
+}) => {
   const router = useRouter();
 
-  const isInstitutePage = route === "/institute";
-
-  const title = isInstitutePage
-    ? "Need help building curriculums?"
-    : "Want to plan better curricula?";
-
-  const description = isInstitutePage
-    ? "We are here to help!"
-    : "Presenting Courseplan!";
+  const isCourseplan = route === "/plan";
 
   const toggleCheck = (e: any) => {
     let checked = e.target.checked;
-    router.push(checked ? "/institute" : "/");
+    router.push(checked ? "/plan" : "/map");
   };
 
   return (
-    <div className="lg:px-18 items-center gap-4 px-4 py-16 sm:px-16 md:px-32 lg:flex xl:px-32">
+    <div className="items-center  gap-4 lg:flex ">
       <div className="flex flex-1 flex-col">
-        <div className="mb-4 flex items-center gap-2">
-          <p className="text-sm">For students</p>
-          <Switch
-            className="flex items-center"
-            checked={isInstitutePage}
-            onChange={(e) => toggleCheck(e)}
-            size="md"
-          />
-          <p className="text-sm">For institute</p>
-        </div>
+        {displaySwitch && (
+          <div className="mb-4 flex items-center gap-2">
+            <p className="text-sm">For students</p>
+
+            <Switch
+              className="flex items-center"
+              checked={isCourseplan}
+              onChange={(e) => toggleCheck(e)}
+              size="md"
+            />
+            <p className="text-sm">For institute</p>
+          </div>
+        )}
 
         <div className="lg:max-w-[40vw]">
           <p className="text-5xl font-semibold tracking-tighter lg:text-6xl">
@@ -45,7 +48,7 @@ const Hero: React.FC<HeroSectionTypes> = ({ route }) => {
           </p>
           <p
             className={`mt-4 ${
-              isInstitutePage ? "text-gray-200" : "text-gray-600"
+              isCourseplan ? "text-gray-200" : "text-gray-600"
             }`}
           >
             {description}

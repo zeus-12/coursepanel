@@ -26,7 +26,7 @@ const Hero: React.FC<HeroSectionTypes> = ({
   };
 
   return (
-    <div className="items-center  gap-4 lg:flex ">
+    <div className="items-center gap-4 lg:flex ">
       <div className="flex flex-1 flex-col">
         {displaySwitch && (
           <div className="mb-4 flex items-center gap-2">
@@ -43,12 +43,16 @@ const Hero: React.FC<HeroSectionTypes> = ({
         )}
 
         <div className="lg:max-w-[40vw]">
-          <p className="text-5xl font-semibold tracking-tighter lg:text-6xl">
+          <p
+            className={`text-5xl font-semibold tracking-tighter ${
+              !isCourseplan && "text-white"
+            } lg:text-6xl`}
+          >
             {title}
           </p>
           <p
             className={`mt-4 ${
-              isCourseplan ? "text-gray-200" : "text-gray-600"
+              !isCourseplan ? "text-gray-200" : "text-gray-600"
             }`}
           >
             {description}

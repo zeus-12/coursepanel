@@ -13,11 +13,7 @@ export default function Institute() {
           route={route}
           title={"Need help building curriculums?"}
           description="Presenting Courseplan!"
-          displaySwitch={true}
         />
-      </div>
-      <div className="lg:flex lg:min-h-screen lg:items-center">
-        <Features />
       </div>
     </div>
   );

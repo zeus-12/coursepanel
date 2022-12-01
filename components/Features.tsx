@@ -33,78 +33,80 @@ const content = [
 
 export const Features: React.FC<FeaturesProps> = ({}) => {
   return (
-    <div className="justify-center lg:flex">
-      {/* 1st */}
-      <CardWrapper bg={content[0].bg} colour={content[0].colour}>
-        <CardHeading
-          heading={content[0].heading}
-          subheading={content[0].subheading}
-        />
+    <div className="justify-center bg-primary-colour lg:flex lg:min-h-screen lg:items-center">
+      <div className="justify-center lg:flex">
+        {/* 1st */}
+        <CardWrapper bg={content[0].bg} colour={content[0].colour}>
+          <CardHeading
+            heading={content[0].heading}
+            subheading={content[0].subheading}
+          />
 
-        <Image
-          src="/feature/1.png"
-          className="my-8 h-40 w-auto"
-          width={100}
-          height={100}
-          alt="logo"
-        />
-        <ul className="list-disc">
-          {content[0].description.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </CardWrapper>
+          <Image
+            src="/feature/1.png"
+            className="my-8 h-40 w-auto"
+            width={100}
+            height={100}
+            alt="logo"
+          />
+          <ul className="list-disc">
+            {content[0].description.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </CardWrapper>
 
-      {/* 2nd  */}
+        {/* 2nd  */}
 
-      <CardWrapper bg={content[1].bg} colour={content[1].colour}>
-        <CardHeading
-          heading={content[1].heading}
-          subheading={content[1].subheading}
-        />
+        <CardWrapper bg={content[1].bg} colour={content[1].colour}>
+          <CardHeading
+            heading={content[1].heading}
+            subheading={content[1].subheading}
+          />
 
-        <Image
-          src="/feature/2.png"
-          className="my-8 h-40 w-auto "
-          width={100}
-          height={100}
-          alt="logo"
-        />
-        <ul className="list-disc">
-          {content[1].description.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </CardWrapper>
+          <Image
+            src="/feature/2.png"
+            className="my-8 h-40 w-auto "
+            width={100}
+            height={100}
+            alt="logo"
+          />
+          <ul className="list-disc">
+            {content[1].description.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </CardWrapper>
 
-      {/* 3rd */}
+        {/* 3rd */}
 
-      <CardWrapper bg={content[2].bg} colour={content[2].colour}>
-        <CardHeading
-          heading={content[2].heading}
-          subheading={content[2].subheading}
-        />
+        <CardWrapper bg={content[2].bg} colour={content[2].colour}>
+          <CardHeading
+            heading={content[2].heading}
+            subheading={content[2].subheading}
+          />
 
-        {[3, 4].map((item) => (
-          <>
-            <div
-              className={`item flex items-center ${
-                item % 2 !== 0 ? "flex-row-reverse" : ""
-              }`}
-              key={item}
-            >
-              <Image
-                src={`/feature/${item}.png`}
-                className="my-6 h-28 w-auto"
-                width={100}
-                height={100}
-                alt="logo"
-              />
-              <p>{content[2].description[item - 3]}</p>
+          {[3, 4].map((item) => (
+            <div key={item}>
+              <div
+                className={`item flex items-center ${
+                  item % 2 !== 0 ? "flex-row-reverse" : ""
+                }`}
+                key={item}
+              >
+                <Image
+                  src={`/feature/${item}.png`}
+                  className="my-6 h-28 w-auto"
+                  width={100}
+                  height={100}
+                  alt="logo"
+                />
+                <p>{content[2].description[item - 3]}</p>
+              </div>
             </div>
-          </>
-        ))}
-      </CardWrapper>
+          ))}
+        </CardWrapper>
+      </div>
     </div>
   );
 };

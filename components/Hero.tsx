@@ -7,15 +7,9 @@ interface HeroSectionTypes {
   route: string;
   title: string;
   description: string;
-  displaySwitch: boolean;
 }
 
-const Hero: React.FC<HeroSectionTypes> = ({
-  route,
-  title,
-  description,
-  displaySwitch,
-}) => {
+const Hero: React.FC<HeroSectionTypes> = ({ route, title, description }) => {
   const router = useRouter();
 
   const isCourseplan = route === "/plan";
@@ -28,19 +22,17 @@ const Hero: React.FC<HeroSectionTypes> = ({
   return (
     <div className="items-center gap-4 lg:flex ">
       <div className="flex flex-1 flex-col">
-        {displaySwitch && (
-          <div className="mb-4 flex items-center gap-2">
-            <p className="text-sm">For students</p>
+        <div className="mb-4 flex items-center gap-2">
+          <p className="text-sm">For students</p>
 
-            <Switch
-              className="flex items-center"
-              checked={isCourseplan}
-              onChange={(e) => toggleCheck(e)}
-              size="md"
-            />
-            <p className="text-sm">For institute</p>
-          </div>
-        )}
+          <Switch
+            className="flex items-center"
+            checked={isCourseplan}
+            onChange={(e) => toggleCheck(e)}
+            size="md"
+          />
+          <p className="text-sm">For institute</p>
+        </div>
 
         <div className="lg:max-w-[40vw]">
           <p

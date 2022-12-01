@@ -10,7 +10,6 @@ export default function Institute() {
       <Hero
         route={route}
         title={"Want to plan better curricula?"}
-        displaySwitch={true}
         description="We are here to help!"
       />
     </div>

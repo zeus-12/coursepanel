@@ -2,7 +2,7 @@ import Image from "next/image";
 
 interface SolutionsProps {}
 
-export const Solutions: React.FC<SolutionsProps> = ({}) => {
+const Solutions: React.FC<SolutionsProps> = ({}) => {
   const content = [
     {
       title: "For Learners",
@@ -46,3 +46,5 @@ export const Solutions: React.FC<SolutionsProps> = ({}) => {
     </div>
   );
 };
+
+export default Solutions;

@@ -31,7 +31,7 @@ const content = [
   },
 ];
 
-export const Features: React.FC<FeaturesProps> = ({}) => {
+const Features: React.FC<FeaturesProps> = ({}) => {
   return (
     <div className="justify-center bg-primary-colour lg:flex lg:min-h-screen lg:items-center">
       <div className="justify-center lg:flex">
@@ -144,3 +144,5 @@ const CardWrapper: React.FC<CardWrapperProps> = ({ children, bg, colour }) => {
     </div>
   );
 };
+
+export default Features;

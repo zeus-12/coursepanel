@@ -4,7 +4,7 @@ import { stripExtension } from "../utils/helper";
 
 interface RootHeroProps {}
 
-export const RootHero: React.FC<RootHeroProps> = ({}) => {
+const RootHero: React.FC<RootHeroProps> = ({}) => {
   return (
     <div className=" bg-primary-colour py-16 pb-64  ">
       <div className="flex flex-col items-center gap-6">
@@ -37,3 +37,4 @@ export const RootHero: React.FC<RootHeroProps> = ({}) => {
     </div>
   );
 };
+export default RootHero;

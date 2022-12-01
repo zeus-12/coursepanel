@@ -2,7 +2,7 @@ import YouTube, { YouTubeProps } from "react-youtube";
 
 interface YoutubeEmbedProps {}
 
-export const YoutubeEmbed: React.FC<YoutubeEmbedProps> = ({}) => {
+const YoutubeEmbed: React.FC<YoutubeEmbedProps> = ({}) => {
   const onPlayerReady: YouTubeProps["onReady"] = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
@@ -29,3 +29,5 @@ export const YoutubeEmbed: React.FC<YoutubeEmbedProps> = ({}) => {
     </div>
   );
 };
+
+export default YoutubeEmbed;

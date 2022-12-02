@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 interface SlideUpProps {
   children: React.ReactNode;
-  threshold: number;
+  threshold?: number;
 }
 
 const SlideUpWhenVisible: React.FC<SlideUpProps> = ({

@@ -5,14 +5,15 @@ interface SolutionsProps {}
 const Solutions: React.FC<SolutionsProps> = ({}) => {
   const content = [
     {
-      title: "For Learners",
+      title: "CourseMap",
       description:
-        "Learners analyze roads they have to take to make the most out of the courses offered by your institute",
+        "We help students analyze the roads they have to take to make the most out of the courses offered by the institution",
       image_src: "coursemap.png",
     },
     {
-      title: "For Institutes",
-      description: "Launch and track impactful education programmes",
+      title: "CoursePlan",
+      description:
+        "We help you analyze the performance of courses in your institution, accurately map skills of learners and offer a well rounded curriculum",
       image_src: "courseplan.png",
     },
   ];
@@ -21,16 +22,18 @@ const Solutions: React.FC<SolutionsProps> = ({}) => {
       <p className="mb-4 text-center text-4xl font-bold tracking-tighter lg:mb-12">
         What we solve
       </p>
-      <div className="space-y-8">
+      <div className="space-y-16">
         {content.map((item, index) => (
           <div
-            className={`flex flex-col justify-around gap-4 lg:items-center lg:gap-16 ${
-              index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
+            className={`flex flex-col justify-around gap-4 lg:items-center lg:gap-24 ${
+              index % 2 !== 0
+                ? "lg:flex-row-reverse lg:text-right"
+                : " lg:flex-row"
             }`}
             key={index}
           >
-            <div className="lg:max-w-[40vw]">
-              <h1 className="font-semibold ">{item.title}</h1>
+            <div className="flex-1">
+              <p className="mb-4 text-3xl font-semibold">{item.title}</p>
               <p className="text-gray-600">{item.description}</p>
             </div>
             <Image
@@ -38,7 +41,8 @@ const Solutions: React.FC<SolutionsProps> = ({}) => {
               width={600}
               height={600}
               alt=""
-              className="h-auto w-full lg:max-w-[30vw]"
+              // className="h-auto w-full lg:max-w-[30vw]"
+              className="flex-1"
             />
           </div>
         ))}

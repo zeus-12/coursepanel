@@ -2,14 +2,21 @@ import { Switch, Button } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { CalendlyButton } from "./CalendlyButton";
 
 interface HeroSectionTypes {
   route: string;
   title: string;
   description: string;
+  imageSrc: string;
 }
 
-const Hero: React.FC<HeroSectionTypes> = ({ route, title, description }) => {
+const Hero: React.FC<HeroSectionTypes> = ({
+  route,
+  title,
+  description,
+  imageSrc,
+}) => {
   const router = useRouter();
 
   const isCourseplan = route === "/plan";
@@ -21,8 +28,8 @@ const Hero: React.FC<HeroSectionTypes> = ({ route, title, description }) => {
 
   return (
     <div className="items-center gap-4 lg:flex ">
-      <div className="flex flex-1 flex-col">
-        <div className="mb-4 flex items-center gap-2">
+      <div className="flex flex-1 flex-col space-y-4">
+        <div className="flex items-center gap-2">
           <p className="text-sm">For students</p>
 
           <Switch
@@ -34,7 +41,7 @@ const Hero: React.FC<HeroSectionTypes> = ({ route, title, description }) => {
           <p className="text-sm">For institute</p>
         </div>
 
-        <div className="lg:max-w-[40vw]">
+        <div className="flex flex-col gap-2 lg:max-w-[40vw]">
           <p
             className={`text-5xl font-semibold tracking-tighter ${
               !isCourseplan && "text-white"
@@ -44,27 +51,23 @@ const Hero: React.FC<HeroSectionTypes> = ({ route, title, description }) => {
           </p>
           <p
             className={`mt-4 ${
-              !isCourseplan ? "text-gray-200" : "text-gray-600"
-            }`}
+              !isCourseplan ? "text-[#A8A8A8]" : "text-gray-600"
+            } lg:max-w-[20vw]`}
           >
             {description}
           </p>
 
-          <Link href="/">
-            <Button className="mt-4" variant="outline">
-              Get Started!
-            </Button>
-          </Link>
+          <CalendlyButton />
         </div>
       </div>
 
       <div className="flex flex-1 justify-center">
         <Image
-          src="/logo.png"
+          src={imageSrc}
           alt="logo"
-          width={100}
-          height={100}
-          className="h-auto w-full lg:max-w-[30vw]"
+          width={800}
+          height={800}
+          className="h-auto w-full rounded-md lg:max-w-[40vw]"
         />
       </div>
     </div>

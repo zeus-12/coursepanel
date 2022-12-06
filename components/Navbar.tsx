@@ -22,7 +22,7 @@ const Navbar = () => {
   const closeDrawer = () => setOpened(false);
 
   return (
-    <nav className="my-3 flex items-center justify-between px-8 text-2xl lg:px-24 xl:px-32">
+    <nav className="flex items-center  justify-between py-3 px-8 text-2xl lg:px-24 xl:px-32">
       <Logo />
 
       <div className="hidden gap-8 lg:flex">
@@ -68,7 +68,7 @@ const NavItemsComponent: React.FC<NavItemsComponentProps> = ({
       ))}
 
       <Link href="/contact">
-        <Button variant="outline" color={"dark"}>
+        <Button onClick={closeDrawer} variant="outline" color={"dark"}>
           Contact Us
         </Button>
       </Link>

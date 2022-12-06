@@ -1,6 +1,7 @@
 import { Button } from "@mantine/core";
 import Image from "next/image";
 import { stripExtension } from "../utils/helper";
+import { CalendlyButton } from "./CalendlyButton";
 
 interface RootHeroProps {}
 
@@ -13,9 +14,7 @@ const RootHero: React.FC<RootHeroProps> = ({}) => {
           Coursepanel is the platform for educational institutes providing the
           right tools for driving effective learning programs
         </p>
-        <a href="https://calendly.com/prabhatb/demo-meeting">
-          <Button className="bg-[#003B75]">▶️ Book demo</Button>
-        </a>
+        <CalendlyButton />
         <p>TRUSTED BY</p>
         <div className="flex items-center gap-4">
           {[

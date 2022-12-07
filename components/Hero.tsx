@@ -27,7 +27,7 @@ const Hero: React.FC<HeroSectionTypes> = ({
   };
 
   return (
-    <div className="items-center gap-4 lg:flex ">
+    <div className="flex flex-col items-center gap-4 lg:flex-row ">
       <div className="flex flex-1 flex-col space-y-4">
         <div className="flex items-center gap-2">
           <p className="text-sm">For students</p>

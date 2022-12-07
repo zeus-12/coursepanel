@@ -8,13 +8,13 @@ const Solutions: React.FC<SolutionsProps> = ({}) => {
       title: "CourseMap",
       description:
         "We help students analyze the roads they have to take to make the most out of the courses offered by the institution",
-      image_src: "coursemap.png",
+      image_src: "coursemap1.png",
     },
     {
       title: "CoursePlan",
       description:
         "We help you analyze the performance of courses in your institution, accurately map skills of learners and offer a well rounded curriculum",
-      image_src: "courseplan.png",
+      image_src: "coursemap2.png",
     },
   ];
   return (

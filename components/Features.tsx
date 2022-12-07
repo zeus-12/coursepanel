@@ -45,14 +45,16 @@ const Features: React.FC<FeaturesProps> = ({}) => {
               heading={content.heading}
               subheading={content.subheading}
             />
+            <div className="flex justify-center">
+              <Image
+                src={`/feature/${content.src}.png`}
+                className="my-3 w-64 md:my-8"
+                width={100}
+                height={100}
+                alt="logo"
+              />
+            </div>
 
-            <Image
-              src={`/feature/${content.src}.png`}
-              className="my-3 h-40 w-auto md:my-8"
-              width={100}
-              height={100}
-              alt="logo"
-            />
             <div>
               {content.description.map((item) => (
                 <p className="text-center" key={item}>

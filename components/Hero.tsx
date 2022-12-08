@@ -33,6 +33,14 @@ const Hero: React.FC<HeroSectionTypes> = ({
           <p className="text-sm">For students</p>
 
           <Switch
+            classNames={
+              !isCourseplan
+                ? {
+                    thumb: "bg-white",
+                    track: "bg-gray-500",
+                  }
+                : {}
+            }
             className="flex items-center"
             checked={isCourseplan}
             onChange={(e) => toggleCheck(e)}
@@ -52,7 +60,7 @@ const Hero: React.FC<HeroSectionTypes> = ({
           <p
             className={`mt-4 ${
               !isCourseplan ? "text-[#A8A8A8]" : "text-gray-600"
-            } lg:max-w-[20vw]`}
+            } lg:max-w-[30vw]`}
           >
             {description}
           </p>

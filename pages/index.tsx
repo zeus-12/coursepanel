@@ -1,6 +1,6 @@
 import YoutubeEmbed from "@components/YoutubeEmbed";
-import Features from "@components/Features";
-import Solutions from "@components/Solutions";
+import Features from "@components/FeaturesRoot";
+import SolutionsRoot from "@components/SolutionsRoot";
 import RootHero from "@components/RootHero";
 import SlideUpWhenVisible from "@hooks/SlideUpWhenVisible";
 
@@ -14,7 +14,7 @@ export default function Home() {
       <YoutubeEmbed />
 
       <SlideUpWhenVisible>
-        <Solutions />
+        <SolutionsRoot />
       </SlideUpWhenVisible>
 
       <SlideUpWhenVisible>

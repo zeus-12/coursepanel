@@ -3,8 +3,30 @@ import Hero from "@components/Hero";
 import Image from "next/image";
 import { CalendlyButton } from "@components/CalendlyButton";
 import SlideUpWhenVisible from "@hooks/SlideUpWhenVisible";
+import Features from "@components/Features";
+import { Solutions } from "@components/Solutions";
 
 export default function Institute() {
+  const featuresData = [
+    { imageSrc: "1.svg", text: ["Too many courses", "Confused?"] },
+    {
+      imageSrc: "2.svg",
+      text: ["Data driven suggestions", "Access to established roadmaps"],
+    },
+    { imageSrc: "3.svg", text: ["Better education programme"] },
+  ];
+
+  const solutionsData = [
+    {
+      text: "Help students plan their educational journey effectively",
+      imageSrc: "coursemap1.png",
+    },
+    {
+      text: "Easy access to established roadmaps",
+      imageSrc: "coursemap3.png",
+    },
+  ];
+
   const router = useRouter();
   const { route } = router;
   Hero;
@@ -21,47 +43,14 @@ export default function Institute() {
         <Hero
           imageSrc={"/demo/coursemap2.png"}
           route={route}
-          title={"Launch impactful learning programs"}
-          description="Planning flexible programs & assessing the overall impact is now made easy"
+          title={"Make more informed learning choices"}
+          description="Learners can now make the most of courses and projects at your institution"
         />
       </div>
 
       <div className="lg:px-18 bg-black px-4 py-16 text-white  sm:px-16 md:px-32 xl:px-32">
         <SlideUpWhenVisible>
-          <div className="mt-16 flex flex-col items-center justify-between md:flex-row md:items-stretch">
-            {[
-              { imageSrc: "1.svg", text: ["Too many courses", "Confused?"] },
-              {
-                imageSrc: "2.svg",
-                text: [
-                  "Data driven suggestions",
-                  "Access to established roadmaps",
-                ],
-              },
-              { imageSrc: "3.svg", text: ["Better education programme"] },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className={`flex flex-col ${
-                  index % 2 !== 1 ? "md:flex-col-reverse" : ""
-                }`}
-              >
-                <Image
-                  src={`/plan/${item.imageSrc}`}
-                  alt=""
-                  width={300}
-                  height={300}
-                  className="h-44"
-                />
-
-                {item.text.map((ele) => (
-                  <p className="text-center text-lg text-white" key={ele}>
-                    {ele}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </div>
+          <Features data={featuresData} />
         </SlideUpWhenVisible>
 
         <SlideUpWhenVisible>
@@ -78,34 +67,7 @@ export default function Institute() {
         </SlideUpWhenVisible>
 
         <SlideUpWhenVisible>
-          <div className="space-y-16">
-            {[
-              {
-                text: "Help students plan their educational journey effectively",
-                imageSrc: "coursemap1.png",
-              },
-              {
-                text: "Easy access to established roadmaps",
-                imageSrc: "coursemap3.png",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className={`flex flex-col justify-between gap-12 md:flex-row md:items-center ${
-                  i % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                <p className="text-3xl md:max-w-[30vw]"> {item.text}</p>
-                <Image
-                  src={`/demo/${item.imageSrc}`}
-                  width={600}
-                  height={600}
-                  className="w-screen rounded-md md:w-[40vw]"
-                  alt="demo"
-                />
-              </div>
-            ))}
-          </div>
+          <Solutions data={solutionsData} />
         </SlideUpWhenVisible>
 
         <div className="mt-32 flex justify-center">

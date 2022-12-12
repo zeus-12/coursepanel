@@ -6,7 +6,7 @@ const content = [
   {
     title: "Who are we?",
     content:
-      " We are peoples from IIT Madras, located in Alakananda room 232. Something inspirational. Very motivational.",
+      "We are students of IIT Madras, aiming to solve Skill Mapping for institutions, and helping learners navigate through the varied curriculums offered in institutions.",
   },
   {
     title: "Talk with us",

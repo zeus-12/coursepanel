@@ -71,7 +71,7 @@ export default function Institute() {
         </SlideUpWhenVisible>
 
         <div className="mt-32 flex justify-center">
-          <CalendlyButton />
+          <CalendlyButton size="md" />
         </div>
       </div>
     </>

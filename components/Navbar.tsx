@@ -4,6 +4,7 @@ import { Button, Drawer } from "@mantine/core";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { paddingStyles } from "../utils/constants";
 
 const navItems = [
   {
@@ -30,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ backgroundColour }) => {
 
   return (
     <nav
-      className="ext-2xl sticky top-0 z-50 flex items-center justify-between py-3 lg:px-24 xl:px-32"
+      className={`sticky top-0 z-50 flex items-center justify-between py-3 text-2xl ${paddingStyles} sm:px-4 md:px-8`}
       style={{
         backdropFilter: "saturate(180%) blur(20px)",
         background: backgroundColour,
@@ -72,7 +73,8 @@ const NavItemsComponent: React.FC<NavItemsComponentProps> = ({
 
   let twClasses: string, currentPageColor: string, contackButtonColor: string;
   if (isHome) {
-    twClasses = "text-gray-800 hover:bg-blue-200 hover:text-gray-900";
+    twClasses =
+      "text-gray-800 hover:underline underline-offset-2 hover:text-gray-900";
     contackButtonColor = "dark";
   } else if (isCoursemap) {
     twClasses = "text-white hover:text-blue-400";

@@ -10,8 +10,8 @@ const RootHero: React.FC<RootHeroProps> = ({}) => {
     <div className="bg-primary-colour py-16 pb-64  ">
       <SlideUpWhenVisible>
         <div className="flex flex-col items-center gap-6">
-          <p className=" text-5xl font-bold">Plan. Learn. Grow</p>
-          <p className="text-center text-gray-600 lg:max-w-[35vw] ">
+          <p className=" text-center text-5xl font-bold">Plan. Learn. Grow</p>
+          <p className="max-w-[70vw] text-center text-gray-600 lg:max-w-[35vw]">
             Coursepanel is the platform for educational institutes providing the
             right tools for driving effective learning programs
           </p>

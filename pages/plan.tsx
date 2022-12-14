@@ -1,9 +1,7 @@
 import { useRouter } from "next/router";
 import Hero from "@components/Hero";
 import { CalendlyButton } from "@components/CalendlyButton";
-import SlideUpWhenVisible from "@hooks/SlideUpWhenVisible";
 import Features from "@components/Features";
-import Image from "next/image";
 import { Solutions } from "@components/Solutions";
 import Navbar from "@components/Navbar";
 import { ProductDescription } from "@components/ProductDescription";

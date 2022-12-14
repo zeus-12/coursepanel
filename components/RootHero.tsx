@@ -1,5 +1,4 @@
 import SlideUpWhenVisible from "@hooks/SlideUpWhenVisible";
-import { Button } from "@mantine/core";
 import Image from "next/image";
 import { stripExtension } from "../utils/helper";
 import { CalendlyButton } from "./CalendlyButton";

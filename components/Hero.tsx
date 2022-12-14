@@ -1,7 +1,5 @@
-import SlideUpWhenVisible from "@hooks/SlideUpWhenVisible";
-import { Switch, Button } from "@mantine/core";
+import { Switch } from "@mantine/core";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { paddingStyles } from "../utils/constants";
 import { CalendlyButton } from "./CalendlyButton";

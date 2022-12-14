@@ -14,7 +14,10 @@ export const ProductDescription: React.FC<ProductDescriptionProps> = ({
 
         <div>
           {description.map((item, index) => (
-            <p className="text-3xl" key={index}>
+            <p
+              className="text-3xl font-semibold tracking-tight text-gray-600"
+              key={index}
+            >
               {item}
             </p>
           ))}

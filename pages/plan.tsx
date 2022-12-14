@@ -42,10 +42,10 @@ export default function Institute() {
   ];
 
   const backgroundColour =
-    "linear-gradient(180deg, #D1F4FF 2.33%, #FFFFFF 100%);";
+    "linear-gradient(180deg, #D1F4FF 2.33%, #FFFFFF 100%)";
   return (
     <>
-      <Navbar backgroundColour={backgroundColour} />
+      <Navbar backgroundColour={"#d1f4ff"} />
 
       <Hero
         backgroundColour={backgroundColour}

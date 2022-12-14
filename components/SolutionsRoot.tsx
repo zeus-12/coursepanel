@@ -34,7 +34,7 @@ const SolutionsRoot: React.FC<SolutionsProps> = ({}) => {
               }`}
               key={index}
             >
-              <div className="flex-1">
+              <div className="lg:w-1/2">
                 <p className="mb-4 text-3xl font-semibold">{item.title}</p>
                 <p className="text-gray-600">{item.description}</p>
               </div>
@@ -43,8 +43,7 @@ const SolutionsRoot: React.FC<SolutionsProps> = ({}) => {
                 width={600}
                 height={600}
                 alt=""
-                // className="h-auto w-full lg:max-w-[30vw]"
-                className="flex-1"
+                className="h-auto w-full lg:w-1/2"
               />
             </div>
           ))}

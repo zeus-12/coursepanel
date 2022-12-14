@@ -18,7 +18,7 @@ const YoutubeEmbed: React.FC<YoutubeEmbedProps> = ({}) => {
   };
   return (
     <div className="relative mb-48 flex flex-col items-center bg-primary-colour">
-      <div className="absolute -top-[12rem] z-50 ">
+      <div className="absolute -top-[12rem] z-20 ">
         <YouTube
           iframeClassName="rounded-md aspect-video h-96  max-w-[90vw]"
           videoId="yDWQ6jR-m4M"

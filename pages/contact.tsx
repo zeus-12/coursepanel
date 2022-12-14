@@ -1,6 +1,6 @@
+import Navbar from "@components/Navbar";
 import { Button } from "@mantine/core";
-
-interface ContactProps {}
+import { paddingStyles } from "../utils/constants";
 
 const content = [
   {
@@ -11,30 +11,34 @@ const content = [
   {
     title: "Talk with us",
     content:
-      "Not convinced? Reach out to us and get  all your queries solved at coursepanel@gmail.com",
+      "Not convinced? Reach out to us and get  all your queries solved at contact@coursepanel.in",
   },
 ];
 
-const Contact: React.FC<ContactProps> = () => {
+const Contact = () => {
   return (
-    <div className="lg:px-18 px-4 py-16 sm:px-16 md:px-32  xl:px-32">
-      <div>
-        <p className="my-4 text-5xl font-semibold tracking-tight">
-          Get your journey started with us!
-        </p>
+    <>
+      <Navbar backgroundColour="" />
 
-        <Button className="" color={"dark"} variant="outline">
-          Book a Demo
-        </Button>
-      </div>
+      <div className={paddingStyles}>
+        <div>
+          <p className="my-4 text-5xl font-semibold tracking-tight">
+            Get your journey started with us!
+          </p>
 
-      {content.map((item, i) => (
-        <div className="mt-16" key={i}>
-          <p className="text-3xl font-medium tracking-tight">{item.title}</p>
-          <p className="text-xl text-gray-500">{item.content}</p>
+          <Button className="" color={"dark"} variant="outline">
+            Book a Demo
+          </Button>
         </div>
-      ))}
-    </div>
+
+        {content.map((item, i) => (
+          <div className="mt-16" key={i}>
+            <p className="text-3xl font-medium tracking-tight">{item.title}</p>
+            <p className="text-xl text-gray-500">{item.content}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { Footer } from "./Footer";
-import Navbar from "./Navbar";
 
 interface LayoutTypes {
   children: React.ReactNode;
@@ -9,7 +8,6 @@ interface LayoutTypes {
 const Layout: React.FC<LayoutTypes> = ({ children }) => {
   return (
     <div>
-      <Navbar />
       <div>{children}</div>
       <Footer />
     </div>

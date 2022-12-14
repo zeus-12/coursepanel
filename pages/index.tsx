@@ -1,25 +1,20 @@
 import YoutubeEmbed from "@components/YoutubeEmbed";
-import Features from "@components/FeaturesRoot";
+import FeaturesRoot from "@components/FeaturesRoot";
 import SolutionsRoot from "@components/SolutionsRoot";
 import RootHero from "@components/RootHero";
-import SlideUpWhenVisible from "@hooks/SlideUpWhenVisible";
+import Navbar from "@components/Navbar";
 
 export default function Home() {
   return (
-    <div>
-      <SlideUpWhenVisible>
-        <RootHero />
-      </SlideUpWhenVisible>
+    <>
+      <Navbar backgroundColour="#D1F4FF" />
+      <RootHero />
 
       <YoutubeEmbed />
 
-      <SlideUpWhenVisible>
-        <SolutionsRoot />
-      </SlideUpWhenVisible>
+      <SolutionsRoot />
 
-      <SlideUpWhenVisible>
-        <Features />
-      </SlideUpWhenVisible>
-    </div>
+      <FeaturesRoot />
+    </>
   );
 }

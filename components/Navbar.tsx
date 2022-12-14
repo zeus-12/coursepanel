@@ -16,17 +16,30 @@ const navItems = [
   },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  backgroundColour: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ backgroundColour }) => {
   const [opened, setOpened] = useState(false);
 
   const closeDrawer = () => setOpened(false);
 
+  const router = useRouter();
+  const { route } = router;
+
   return (
-    <nav className="flex items-center  justify-between py-3 px-8 text-2xl lg:px-24 xl:px-32">
-      <Logo />
+    <nav
+      className="ext-2xl sticky top-0 z-50 flex items-center justify-between py-3 lg:px-24 xl:px-32"
+      style={{
+        backdropFilter: "saturate(180%) blur(20px)",
+        background: backgroundColour,
+      }}
+    >
+      <Logo route={route} />
 
       <div className="hidden gap-8 lg:flex">
-        <NavItemsComponent closeDrawer={() => {}} />
+        <NavItemsComponent route={route} closeDrawer={() => {}} />
       </div>
 
       <Burger opened={opened} setOpened={setOpened} />
@@ -38,7 +51,7 @@ const Navbar = () => {
         className="pt-4"
         classNames={{ closeButton: "text-blue-400 scale-150 mr-3" }}
       >
-        <NavItemsComponent closeDrawer={closeDrawer} />
+        <NavItemsComponent route={route} closeDrawer={closeDrawer} />
       </Drawer>
     </nav>
   );
@@ -46,20 +59,38 @@ const Navbar = () => {
 
 interface NavItemsComponentProps {
   closeDrawer: () => void;
+  route: string;
 }
 
 const NavItemsComponent: React.FC<NavItemsComponentProps> = ({
   closeDrawer,
+  route,
 }) => {
-  const router = useRouter();
+  // const isCourseplan = route === "/plan";
+  const isCoursemap = route === "/map";
+  const isHome = route === "/";
+
+  let twClasses: string, currentPageColor: string, contackButtonColor: string;
+  if (isHome) {
+    twClasses = "text-gray-800 hover:bg-blue-200 hover:text-gray-900";
+    contackButtonColor = "dark";
+  } else if (isCoursemap) {
+    twClasses = "text-white hover:text-blue-400";
+    currentPageColor = "text-blue-400 ";
+    contackButtonColor = "blue";
+  } else {
+    twClasses = "text-gray-600 hover:bg-gray-100 hover:text-black";
+    currentPageColor = "text-black";
+    contackButtonColor = "dark";
+  }
 
   return (
     <div className="flex flex-col items-center gap-8 lg:flex-row">
       {navItems.map((item) => (
         <Link onClick={closeDrawer} href={item.path} key={item.name}>
           <p
-            className={`rounded-md px-2 py-[0.33rem] text-2xl font-semibold text-gray-700 hover:bg-gray-100 lg:text-lg ${
-              router.route.startsWith(item.path) ? "text-cyan-500 " : ""
+            className={`${twClasses} rounded-md px-2 py-[0.33rem] text-2xl font-semibold lg:text-lg ${
+              route.startsWith(item.path) ? currentPageColor : ""
             }`}
           >
             {item.name}
@@ -68,7 +99,11 @@ const NavItemsComponent: React.FC<NavItemsComponentProps> = ({
       ))}
 
       <Link href="/contact">
-        <Button onClick={closeDrawer} variant="outline" color={"dark"}>
+        <Button
+          onClick={closeDrawer}
+          variant="outline"
+          color={contackButtonColor}
+        >
           Contact Us
         </Button>
       </Link>
@@ -76,12 +111,24 @@ const NavItemsComponent: React.FC<NavItemsComponentProps> = ({
   );
 };
 
-const Logo: React.FC = () => {
+interface LogoProps {
+  route: string;
+}
+
+const Logo: React.FC<LogoProps> = ({ route }) => {
+  const isCoursemap = route === "/map";
+
   return (
     <Link href="/" passHref>
       <div className="flex items-center">
         <Image src="/logo-icon.png" width={40} height={40} alt="logo" />
-        <p className="mt-2 text-xl font-semibold tracking-tight">CoursePanel</p>
+        <p
+          className={`mt-2 text-xl font-semibold tracking-tight ${
+            isCoursemap ? "text-white" : ""
+          }`}
+        >
+          CoursePanel
+        </p>
       </div>
     </Link>
   );

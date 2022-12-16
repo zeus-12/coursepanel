@@ -35,12 +35,11 @@ const contents = [
 const FeaturesRoot: React.FC<FeaturesProps> = ({}) => {
   return (
     <SlideUpWhenVisible>
-      <div className="my-16 justify-center md:flex">
-        <div className="justify-center md:flex">
+        <div className="justify-evenly my-16 md:flex">
           {contents.map((content) => (
             <div
               key={content.heading}
-              className="flex flex-col items-center py-16 px-8 md:flex-1 md:items-stretch"
+              className="flex flex-col items-center py-16 px-8 md:items-stretch md:w-96 w-full rounded-md"
               style={{ background: content.bg, color: content.colour }}
             >
               <CardHeading
@@ -67,7 +66,7 @@ const FeaturesRoot: React.FC<FeaturesProps> = ({}) => {
             </div>
           ))}
         </div>
-      </div>
+  
     </SlideUpWhenVisible>
   );
 };

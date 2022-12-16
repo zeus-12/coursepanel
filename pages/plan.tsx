@@ -58,7 +58,9 @@ export default function Institute() {
       <div className={paddingStyles}>
         <Features data={featuresData} />
 
-        <ProductDescription description={productDescription} />
+        <ProductDescription
+          route={route}
+          description={productDescription} />
 
         <Solutions data={solutionsData} />
 

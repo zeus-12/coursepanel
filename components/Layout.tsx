@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import { Footer } from "./Footer";
 
 interface LayoutTypes {
   children: React.ReactNode;
@@ -8,8 +8,8 @@ interface LayoutTypes {
 const Layout: React.FC<LayoutTypes> = ({ children }) => {
   return (
     <div>
-      <Navbar />
-      <div className=" ">{children}</div>
+      <div>{children}</div>
+      <Footer />
     </div>
   );
 };

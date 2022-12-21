@@ -1,13 +1,20 @@
-import { useRouter } from "next/router";
-import Hero from "@components/Hero";
+import YoutubeEmbed from "@components/YoutubeEmbed";
+import FeaturesRoot from "@components/FeaturesRoot";
+import SolutionsRoot from "@components/SolutionsRoot";
+import RootHero from "@components/RootHero";
+import Navbar from "@components/Navbar";
 
 export default function Home() {
-  const router = useRouter();
-  const { route } = router;
-
   return (
-    <div>
-      <Hero route={route} />
-    </div>
+    <>
+      <Navbar backgroundColour="#D1F4FF" />
+      <RootHero />
+
+      <YoutubeEmbed />
+
+      <SolutionsRoot />
+
+      <FeaturesRoot />
+    </>
   );
 }
